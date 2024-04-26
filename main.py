@@ -19,14 +19,11 @@ def generate_cpu_load(interval, utilization):
 
 @app.get("/")
 def read_root():
-    threading.Thread(target=generate_cpu_load, args=(30, 100)).start()
     return {"message": "CPU load generation started"}
+
+# Start the CPU load generation in a new thread as soon as the server is run
+threading.Thread(target=generate_cpu_load, args=(30, 100)).start()
 
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
-
-
-
-
