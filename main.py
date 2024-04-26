@@ -22,7 +22,9 @@ def read_root():
     threading.Thread(target=generate_cpu_load, args=(30, 100)).start()
     return {"message": "CPU load generation started"}
 
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
 
