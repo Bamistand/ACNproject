@@ -22,7 +22,7 @@ def read_root():
     return {"message": "CPU load generation started"}
 
 # Start the CPU load generation in a new thread as soon as the server is run
-threading.Thread(target=generate_cpu_load, args=(30, 100)).start()
+threading.Thread(target=generate_cpu_load, args=(60, 100)).start()
 
 if __name__ == "__main__":
     import uvicorn
