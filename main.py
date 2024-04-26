@@ -15,7 +15,7 @@ def generate_cpu_load(interval, utilization):
             while time.time() < end_time:
                 a = math.sqrt(64 * 64 * 64 * 64 * 64)
         print("About to sleep")
-        time.sleep(240)  # Pause for 4 minutes
+        time.sleep(60)  # Pause for 1 minute
 
 @app.get("/")
 def read_root():
